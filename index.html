@@ -11,6 +11,27 @@
         gtag('config', 'G-44FY7SLGVE');
     </script>
 
+    <!-- Google tag (gtag.js) - Load after consent -->
+    <script>
+        // Default consent mode values
+        gtag('consent', 'default', {
+            'analytics_storage': 'denied',
+            'ad_storage': 'denied'
+        });
+
+        function initializeGoogleAnalytics() {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-44FY7SLGVE';
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-44FY7SLGVE');
+        }
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>United States Agency for Financial Freedom (USAIDed) - Satirical Archive</title>
@@ -356,6 +377,55 @@
         .buy-now-button:hover {
             display: none;  /* or you can completely remove these style rules */
         }
+
+        /* Add consent banner styles */
+        .consent-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 1rem;
+            z-index: 9999;
+            display: none;
+        }
+
+        .consent-banner.visible {
+            display: block;
+        }
+
+        .consent-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .consent-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .consent-button {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .accept-button {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .reject-button {
+            background: #666;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -462,5 +532,55 @@
 
     <!-- Add canonical URL -->
     <link rel="canonical" href="https://your-domain.com" />
+
+    <!-- Consent Banner -->
+    <div id="consent-banner" class="consent-banner">
+        <div class="consent-content">
+            <p>We use cookies and similar technologies to analyze site traffic and improve your browsing experience. By clicking "Accept", you consent to our use of cookies. See our <a href="#" style="color: white; text-decoration: underline;">Privacy Policy</a> for more information.</p>
+            <div class="consent-buttons">
+                <button class="consent-button accept-button" onclick="acceptConsent()">Accept</button>
+                <button class="consent-button reject-button" onclick="rejectConsent()">Reject</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Show consent banner if consent not already given
+        if (!localStorage.getItem('cookieConsent')) {
+            document.getElementById('consent-banner').classList.add('visible');
+        }
+
+        function acceptConsent() {
+            // Update consent state
+            gtag('consent', 'update', {
+                'analytics_storage': 'granted',
+                'ad_storage': 'granted'
+            });
+            
+            // Initialize GA
+            initializeGoogleAnalytics();
+            
+            // Hide banner and save preference
+            document.getElementById('consent-banner').classList.remove('visible');
+            localStorage.setItem('cookieConsent', 'accepted');
+        }
+
+        function rejectConsent() {
+            // Keep consent denied
+            gtag('consent', 'update', {
+                'analytics_storage': 'denied',
+                'ad_storage': 'denied'
+            });
+            
+            // Hide banner and save preference
+            document.getElementById('consent-banner').classList.remove('visible');
+            localStorage.setItem('cookieConsent', 'rejected');
+        }
+
+        // Check for existing consent
+        if (localStorage.getItem('cookieConsent') === 'accepted') {
+            initializeGoogleAnalytics();
+        }
+    </script>
 </body>
 </html> 
