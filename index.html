@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>United States Agency for Financial Freedom (USAIDed) - Satirical Archive</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="A satirical archive of the United States Agency for Financial Freedom (USAIDed), formerly known for international development and humanitarian assistance efforts.">
+    <meta name="keywords" content="USAIDed, satire, parody, international development, humanitarian assistance, COVID-19 satire">
+    <meta name="author" content="Satirical Archive">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="United States Agency for Financial Freedom (USAIDed)">
+    <meta property="og:description" content="A satirical look at international development and humanitarian assistance through the lens of USAIDed.">
+    <meta property="og:image" content="covid.png">
+    <meta property="og:url" content="https://your-domain.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="United States Agency for Financial Freedom (USAIDed)">
+    <meta name="twitter:description" content="A satirical archive of international development efforts that didn't quite go as planned.">
+    <meta name="twitter:image" content="covid.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <style>
+        /* Core styles */
+        :root {
+            --primary-color: #102e68;
+            --secondary-color: #CD2026;
+            --text-color: #212121;
+            --background-color: #FFFFFF;
+            --banner-background: #f0f0f0;
+            --banner-border: #dcdee0;
+            --link-color: #0071bc;
+            --link-hover-color: #102e68;
+            --font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            font-family: var(--font-family);
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Updated USA Banner styles to match original */
+        .usa-banner {
+            background-color: var(--banner-background);
+            border-bottom: 1px solid var(--banner-border);
+        }
+
+        .usa-banner__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0.5rem 1rem;
+        }
+
+        .usa-banner__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .usa-banner__header-flag {
+            width: 16px;
+            margin-right: 0.5rem;
+        }
+
+        /* Updated Header and Navigation to match original exactly */
+        .usa-header {
+            background: var(--primary-color);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            padding: 0;
+            margin: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* Update hero banner styles for better visibility */
+        .hero-banner {
+            width: 100%;
+            height: 400px; /* Set fixed height */
+            overflow: hidden;
+            position: relative;
+            background-color: #f0f0f0; /* Fallback color */
+        }
+
+        .hero-banner__image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .usa-nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        .top-menu {
+            background: #102e68;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 0;
+        }
+
+        .top-menu-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 1rem;
+        }
+
+        .usa-logo {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 0;
+        }
+
+        .logo-img {
+            height: 101px;
+            display: block;
+            margin-left: -100px;
+        }
+
+        /* Exact match for navigation menu */
+        .usa-nav__primary {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .usa-nav__primary-item {
+            position: relative;
+            margin: 0;
+        }
+
+        .usa-nav__primary-item button {
+            color: white;
+            background: transparent;
+            border: none;
+            padding: 1rem;
+            font-size: 0.875rem;
+            cursor: pointer;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            font-family: var(--font-family);
+            transition: background-color 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .usa-nav__primary-item button:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hero section updates */
+        .hero {
+            background: linear-gradient(rgba(16, 46, 104, 0.85), rgba(16, 46, 104, 0.85));
+            color: white;
+            padding: 3rem 0;
+        }
+
+        .hero-text {
+            max-width: 900px;
+            margin: 0 auto 4rem auto;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        .mission-statement {
+            font-size: 1.25rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .mission-details, .mission-impact {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 0;
+            border: 1px solid #dcdee0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease;
+            min-height: 300px;
+            position: relative;
+            overflow: hidden;
+            padding-top: 200px; /* Space for the image */
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .card:nth-child(1) {
+            background-image: url('Screenshot 2025-02-02 at 21.59.15.png');
+        }
+
+        .card:nth-child(2) {
+            background-image: url('Screenshot 2025-02-02 at 22.04.09.png');
+        }
+
+        .card:nth-child(3) {
+            background-image: url('Screenshot 2025-02-02 at 21.57.55.png');
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+            z-index: 1;
+        }
+
+        .card h3, .card p {
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .footer {
+            background: #F0F0F0;
+            padding: 2rem 0;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Add/update link styles */
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--link-hover-color);
+            text-decoration: underline;
+        }
+
+        /* Remove search bar styles */
+        .search-container,
+        .search-input,
+        .search-input::placeholder {
+            display: none;  /* or you can completely remove these style blocks */
+        }
+
+        /* Update partner section styles */
+        .partner-section .card {
+            background-image: url('Screenshot 2025-02-02 at 22.13.39.png') !important; /* Force this background */
+            min-height: 300px;
+            padding-top: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Remove the previous override that was hiding the background */
+        .partner-section .card:nth-child(1),
+        .partner-section .card:nth-child(2),
+        .partner-section .card:nth-child(3) {
+            background-image: url('Screenshot 2025-02-02 at 22.13.39.png') !important;
+        }
+
+        /* Add banner buy button styles */
+        .banner-buy-button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.875rem;
+            margin-left: 1rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .banner-buy-button:hover {
+            background-color: #b01b20;
+        }
+
+        /* Remove the Buy Now button styles */
+        .buy-now-button {
+            display: none;  /* or you can completely remove these style rules */
+        }
+
+        .buy-now-button:hover {
+            display: none;  /* or you can completely remove these style rules */
+        }
+    </style>
+</head>
+<body>
+    <!-- USA Banner -->
+    <section class="usa-banner" aria-label="Satire disclaimer">
+        <div class="usa-banner__inner">
+            <div class="usa-banner__header">
+                <p class="usa-banner__header-text">This is a satire/parody website and is not affiliated with the U.S. government or USAIDed.</p>
+                <button class="banner-buy-button">BUY NOW</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Header with Navigation -->
+    <header class="usa-header">
+        <div class="top-menu">
+            <div class="top-menu-inner">
+                <div class="usa-logo">
+                    <img src="logo2.jpg" alt="USAIDed Logo" class="logo-img">
+                </div>
+                <nav class="usa-nav">
+                    <ul class="usa-nav__primary">
+                        <li class="usa-nav__primary-item">
+                            <button type="button">WHAT WE DID</button>
+                        </li>
+                        <li class="usa-nav__primary-item">
+                            <button type="button">WHERE WE WORKED</button>
+                        </li>
+                        <li class="usa-nav__primary-item">
+                            <button type="button">RESULTS AND DATA (THAT WE TOTALLY CRUSHED)</button>
+                        </li>
+                        <li class="usa-nav__primary-item">
+                            <button type="button">PARTNERED WITH US</button>
+                        </li>
+                        <li class="usa-nav__primary-item">
+                            <button type="button">ABOUT WHO WE WERE</button>
+                        </li>
+                        <li class="usa-nav__primary-item">
+                            <button type="button">CAREERS WE HAD</button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Add hero banner image section -->
+    <div class="hero-banner">
+        <img src="covid.png" alt="USAID Hero Banner" class="hero-banner__image">
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-text">
+                <p class="mission-statement">
+                    The United States Agency for Financial Freedom (USAIDed) was the United States' government agency that used to lead international development and humanitarian assistance efforts to partner countries.
+                </p>
+                <p class="mission-details">
+                    We worked together with individuals, communities, and countries globally to make things better—or at least we tried. USAIDed's efforts provided humanitarian assistance, reduced poverty (hopefully), strengthened democratic governance (or at least gave it a shot), advanced economic opportunities, and helped achieve progress until the budget ran out.
+                </p>
+                <p class="mission-impact">
+                    Our work benefited people around the world, including those in the United States—whether they knew it or not. USAIDed's investments helped achieve sustainable development progress, advancing our former collective security, health, and prosperity… and then we moved on to other things. 😆
+                </p>
+            </div>
+            <h2>Formerly Featured Focus Areas</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Once Promoted Global Health... Until We Got Sick of It</h3>
+                    <p>We invested in global health, claimed to protect Americans at home and abroad, said we were saving lives, tried to strengthen fragile states, and promoted social and economic progress… and then COVID came along, and, well… let's just say, not everything added up.</p>
+                </div>
+                <div class="card">
+                    <h3>Used to Support Global Stability... But Things Got Wobbly</h3>
+                    <p>We used to advance democracy and governance, said it would promote sustainable development and peace around the world… and then reality happened.</p>
+                </div>
+                <div class="card">
+                    <h3>Provided Humanitarian Assistance... And Then Ran Out of Budget</h3>
+                    <p>USAIDed claimed to provide timely and effective humanitarian response, brought disaster relief, and delivered lifesaving assistance amidst complex crises… and then COVID happened, and let's just say, not all 'assistance' was what it seemed.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="partner-section">
+            <h2>Partnered with USAIDed</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Funding Essentials</h3>
+                    <p>Trying to figure out which funding approach used to be best for your organization? Don't worry, we were too! Explore the mysteries of USAIDed's funding terminology and discover opportunities—assuming the COVID boss in the background hasn't already decided for you.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <address>
+                <strong>United States Agency for Financial Freedom</strong><br>
+                📍 1300 Diamond Hands Blvd, NW<br>
+                🚀 Washington, DC 20004 – No Rugs, Just Pumps
+            </address>
+        </div>
+    </footer>
+
+    <!-- Add canonical URL -->
+    <link rel="canonical" href="https://your-domain.com" />
+</body>
+</html> 
