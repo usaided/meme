@@ -1,35 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-44FY7SLGVE"></script>
+    <!-- Consent Mode Setup - Must be before Google Analytics -->
     <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('consent', 'default', {
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'ad_storage': 'denied',
+            'analytics_storage': 'denied',
+            'wait_for_update': 500
+        });
+    </script>
+
+    <!-- Google Analytics - Only loads after consent -->
+    <!-- Google tag (gtag.js) -->
+    <script>
+        // Will only execute after consent is granted
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-
         gtag('config', 'G-44FY7SLGVE');
-    </script>
-
-    <!-- Google tag (gtag.js) - Load after consent -->
-    <script>
-        // Default consent mode values
-        gtag('consent', 'default', {
-            'analytics_storage': 'denied',
-            'ad_storage': 'denied'
-        });
-
-        function initializeGoogleAnalytics() {
-            const script = document.createElement('script');
-            script.async = true;
-            script.src = 'https://www.googletagmanager.com/gtag/js?id=G-44FY7SLGVE';
-            document.head.appendChild(script);
-
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-44FY7SLGVE');
-        }
     </script>
 
     <meta charset="UTF-8">
@@ -378,20 +370,20 @@
             display: none;  /* or you can completely remove these style rules */
         }
 
-        /* Add consent banner styles */
-        .consent-banner {
+        /* Add consent window styles */
+        .consent-modal {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(0, 0, 0, 0.9);
+            background: rgba(0, 0, 0, 0.95);
             color: white;
             padding: 1rem;
             z-index: 9999;
             display: none;
         }
 
-        .consent-banner.visible {
+        .consent-modal.show {
             display: block;
         }
 
@@ -401,7 +393,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 1rem;
+            padding: 1rem;
         }
 
         .consent-buttons {
@@ -417,14 +409,21 @@
             font-weight: 600;
         }
 
-        .accept-button {
+        .accept-all {
             background: var(--secondary-color);
             color: white;
         }
 
-        .reject-button {
-            background: #666;
+        .accept-necessary {
+            background: transparent;
+            border: 1px solid white;
             color: white;
+        }
+
+        .customize-consent {
+            background: transparent;
+            color: white;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -533,53 +532,62 @@
     <!-- Add canonical URL -->
     <link rel="canonical" href="https://your-domain.com" />
 
-    <!-- Consent Banner -->
-    <div id="consent-banner" class="consent-banner">
+    <!-- Add consent modal at the end of body -->
+    <div id="consentModal" class="consent-modal">
         <div class="consent-content">
-            <p>We use cookies and similar technologies to analyze site traffic and improve your browsing experience. By clicking "Accept", you consent to our use of cookies. See our <a href="#" style="color: white; text-decoration: underline;">Privacy Policy</a> for more information.</p>
+            <div class="consent-text">
+                <p>We use cookies and similar technologies to help personalize content, tailor and measure ads, and provide a better experience. By clicking "Accept All" you agree to all cookies. Alternatively, you can "Customize" your choices or accept only necessary cookies.</p>
+            </div>
             <div class="consent-buttons">
-                <button class="consent-button accept-button" onclick="acceptConsent()">Accept</button>
-                <button class="consent-button reject-button" onclick="rejectConsent()">Reject</button>
+                <button class="consent-button accept-all" onclick="acceptAllConsent()">Accept All</button>
+                <button class="consent-button accept-necessary" onclick="acceptNecessaryConsent()">Necessary Only</button>
+                <button class="consent-button customize-consent" onclick="customizeConsent()">Customize</button>
             </div>
         </div>
     </div>
 
+    <!-- Add consent handling script -->
     <script>
-        // Show consent banner if consent not already given
-        if (!localStorage.getItem('cookieConsent')) {
-            document.getElementById('consent-banner').classList.add('visible');
-        }
+        // Show consent modal if no consent is stored
+        window.addEventListener('DOMContentLoaded', function() {
+            if (!localStorage.getItem("consentChoice")) {
+                document.getElementById('consentModal').classList.add('show');
+            }
+        });
 
-        function acceptConsent() {
-            // Update consent state
+        function acceptAllConsent() {
             gtag('consent', 'update', {
-                'analytics_storage': 'granted',
-                'ad_storage': 'granted'
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted',
+                'ad_storage': 'granted',
+                'analytics_storage': 'granted'
             });
             
-            // Initialize GA
-            initializeGoogleAnalytics();
+            localStorage.setItem("consentChoice", "all");
+            document.getElementById('consentModal').classList.remove('show');
             
-            // Hide banner and save preference
-            document.getElementById('consent-banner').classList.remove('visible');
-            localStorage.setItem('cookieConsent', 'accepted');
+            // Load Google Analytics
+            var gtagScript = document.createElement('script');
+            gtagScript.async = true;
+            gtagScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-44FY7SLGVE';
+            document.head.appendChild(gtagScript);
         }
 
-        function rejectConsent() {
-            // Keep consent denied
+        function acceptNecessaryConsent() {
             gtag('consent', 'update', {
-                'analytics_storage': 'denied',
-                'ad_storage': 'denied'
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'ad_storage': 'denied',
+                'analytics_storage': 'denied'
             });
             
-            // Hide banner and save preference
-            document.getElementById('consent-banner').classList.remove('visible');
-            localStorage.setItem('cookieConsent', 'rejected');
+            localStorage.setItem("consentChoice", "necessary");
+            document.getElementById('consentModal').classList.remove('show');
         }
 
-        // Check for existing consent
-        if (localStorage.getItem('cookieConsent') === 'accepted') {
-            initializeGoogleAnalytics();
+        function customizeConsent() {
+            // You can implement a more detailed consent management interface here
+            alert("Customize consent options coming soon!");
         }
     </script>
 </body>
