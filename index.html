@@ -637,6 +637,26 @@
             z-index: 9999;
             animation: fadeInOut 3s ease-in-out;
         }
+
+        .banner-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .banner-whitepaper-button {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.2s ease;
+        }
+
+        .banner-whitepaper-button:hover {
+            background: #702355;
+        }
     </style>
 </head>
 <body>
@@ -648,7 +668,10 @@
                     <p class="usa-banner__header-text"><strong>This website (USAIDed) is a parody and satirical project.</strong></p>
                     <p class="usa-banner__header-text"><strong>It is not affiliated with, endorsed by, or associated with USAID, the U.S. government, or any official entity.</strong></p>
                 </div>
-                <a href="https://pump.fun/coin/GcnRmRuMNLFZ6YJRBHcmQkxhvCtM3SV23GR6N3utpump" target="_blank" class="banner-buy-button">BUY $USAIDed</a>
+                <div class="banner-buttons">
+                    <a href="whitepaper.html" target="_blank" class="banner-whitepaper-button">📄 WHITEPAPER</a>
+                    <a href="https://pump.fun/coin/GcnRmRuMNLFZ6YJRBHcmQkxhvCtM3SV23GR6N3utpump" target="_blank" class="banner-buy-button">BUY $USAIDed</a>
+                </div>
             </div>
         </div>
     </section>
