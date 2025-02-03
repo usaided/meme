@@ -53,7 +53,7 @@
     <style>
         /* Core styles */
         :root {
-            --primary-color: #102e68;
+            --primary-color: #8B2E68;
             --secondary-color: #CD2026;
             --text-color: #212121;
             --background-color: #FFFFFF;
@@ -123,7 +123,7 @@
             z-index: 1;
         }
 
-        .usa-nav-container {
+        .site-nav-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0;
@@ -157,7 +157,7 @@
         }
 
         /* Exact match for navigation menu */
-        .usa-nav__primary {
+        .nav__primary {
             margin: 0;
             padding: 0;
             list-style: none;
@@ -166,12 +166,12 @@
             gap: 0.5rem;
         }
 
-        .usa-nav__primary-item {
+        .nav__primary-item {
             position: relative;
             margin: 0;
         }
 
-        .usa-nav__primary-item button {
+        .nav__primary-item button {
             color: white;
             background: transparent;
             border: none;
@@ -186,7 +186,7 @@
             white-space: nowrap;
         }
 
-        .usa-nav__primary-item button:hover {
+        .nav__primary-item button:hover {
             background: rgba(255, 255, 255, 0.1);
         }
 
@@ -202,6 +202,10 @@
             margin: 0 auto 4rem auto;
             text-align: center;
             line-height: 1.6;
+        }
+
+        .hero-text p {
+            margin-bottom: 1.5rem;
         }
 
         .mission-statement {
@@ -488,6 +492,144 @@
             color: white;
             text-decoration: underline;
         }
+
+        .hashtags {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+        }
+
+        .sources {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 2rem auto;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .source-disclaimer {
+            color: rgba(255, 255, 255, 0.9);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .source-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .source-list li {
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .source-list a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: underline;
+            transition: color 0.2s ease;
+        }
+
+        .source-list a:hover {
+            color: white;
+        }
+
+        .card-footnote {
+            font-size: 0.9rem;
+            font-style: italic;
+            opacity: 0.9;
+            margin-top: 1rem;
+            position: relative;
+            z-index: 2;
+            color: white;
+        }
+
+        .consent-disclaimer {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 1rem;
+            font-style: italic;
+        }
+
+        .full-disclaimer {
+            background: #f5f5f5;
+            padding: 3rem 0;
+            margin-top: 2rem;
+        }
+
+        .full-disclaimer h2 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .disclaimer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        .disclaimer-content p {
+            margin-bottom: 1rem;
+        }
+
+        .banner-text {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .usa-banner__header-text {
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        .floating-disclaimer {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9998;
+        }
+
+        .disclaimer-toggle {
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .crypto-warning {
+            background: #fff3cd;
+            color: #856404;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .floating-reminder {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 0, 0, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            z-index: 9999;
+            animation: fadeInOut 3s ease-in-out;
+        }
     </style>
 </head>
 <body>
@@ -495,8 +637,11 @@
     <section class="usa-banner" aria-label="Satire disclaimer">
         <div class="usa-banner__inner">
             <div class="usa-banner__header">
-                <p class="usa-banner__header-text">This is a satire/parody website and is not affiliated with the U.S. government or USAIDed.</p>
-                <a href="https://pump.fun/coin/GcnRmRuMNLFZ6YJRBHcmQkxhvCtM3SV23GR6N3utpump" target="_blank" class="banner-buy-button">BUY NOW</a>
+                <div class="banner-text">
+                    <p class="usa-banner__header-text"><strong>🎭 PARODY WEBSITE: This is NOT the real USAID website</strong></p>
+                    <p class="usa-banner__header-text"><strong>This is a satirical cryptocurrency project unaffiliated with any government entity</strong></p>
+                </div>
+                <a href="https://pump.fun/coin/GcnRmRuMNLFZ6YJRBHcmQkxhvCtM3SV23GR6N3utpump" target="_blank" class="banner-buy-button">BUY $USAIDed</a>
             </div>
         </div>
     </section>
@@ -508,24 +653,24 @@
                 <div class="usa-logo">
                     <img src="logo2.jpg" alt="USAIDed Logo" class="logo-img">
                 </div>
-                <nav class="usa-nav">
-                    <ul class="usa-nav__primary">
-                        <li class="usa-nav__primary-item">
+                <nav class="site-nav">
+                    <ul class="nav__primary">
+                        <li class="nav__primary-item">
                             <button type="button">WHAT WE DID</button>
                         </li>
-                        <li class="usa-nav__primary-item">
+                        <li class="nav__primary-item">
                             <button type="button">WHERE WE WORKED</button>
                         </li>
-                        <li class="usa-nav__primary-item">
+                        <li class="nav__primary-item">
                             <button type="button">RESULTS AND DATA (THAT WE TOTALLY CRUSHED)</button>
                         </li>
-                        <li class="usa-nav__primary-item">
+                        <li class="nav__primary-item">
                             <button type="button">PARTNERED WITH US</button>
                         </li>
-                        <li class="usa-nav__primary-item">
+                        <li class="nav__primary-item">
                             <button type="button">ABOUT WHO WE WERE</button>
                         </li>
-                        <li class="usa-nav__primary-item">
+                        <li class="nav__primary-item">
                             <button type="button">CAREERS WE HAD</button>
                         </li>
                     </ul>
@@ -543,28 +688,51 @@
         <div class="container">
             <div class="hero-text">
                 <p class="mission-statement">
-                    The United States Agency for Financial Freedom (USAIDed) was the United States' government agency that used to lead international development and humanitarian assistance efforts to partner countries.
+                    The United States Agency for Financial Freedom (USAIDed) was once the leading force behind international development and humanitarian aid—until someone finally checked the budget and asked, "Wait, where did all the money go?"
                 </p>
                 <p class="mission-details">
-                    We worked together with individuals, communities, and countries globally to make things better—or at least we tried. USAIDed's efforts provided humanitarian assistance, reduced poverty (hopefully), strengthened democratic governance (or at least gave it a shot), advanced economic opportunities, and helped achieve progress until the budget ran out.
+                    For decades, we partnered with individuals, communities, and countries globally to make things better—or at least pretend we did. USAIDed's valiant efforts provided humanitarian assistance, reduced poverty (allegedly), strengthened democratic governance (or just funded some really nice meetings), advanced economic opportunities, and helped achieve progress—right up until the moment our funding got frozen faster than a government contractor's paycheck.
                 </p>
+                <p>But don't worry, our legacy lives on (somewhere in a classified folder that DOGE operatives probably accessed last night).</p>
                 <p class="mission-impact">
-                    Our work benefited people around the world, including those in the United States—whether they knew it or not. USAIDed's investments helped achieve sustainable development progress, advancing our former collective security, health, and prosperity… and then we moved on to other things. 😆
+                    USAIDed benefited people worldwide, including Americans—whether they knew it or not. Our investments helped achieve sustainable development, funded questionable projects, and advanced our former collective security, health, and prosperity… until someone decided it was a "bowl of worms" that needed to be shut down.
                 </p>
+                <p>So, what's next? We're officially on the blockchain now. Because if there's one thing more transparent than foreign aid, it's meme coins. 🚀💰</p>
+                <p class="hashtags">#USAIDed #NoRugs #FollowTheMoney</p>
             </div>
+            
+            <div class="sources">
+                <p class="source-disclaimer">This satirical content was created as a parody based on recent news events. Sources:</p>
+                <ul class="source-list">
+                    <li>
+                        <a href="https://edition.cnn.com/2025/02/02/politics/usaid-officials-leave-musk-doge/index.html" target="_blank" rel="noopener noreferrer">
+                            CNN: "Elon Musk said Donald Trump agreed USAID needs to be 'shut down'"
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.forbes.com/sites/siladityaray/2025/02/03/elon-musk-says-trump-has-agreed-to-shut-down-usaid/" target="_blank" rel="noopener noreferrer">
+                            Forbes: "Elon Musk Says Trump Has 'Agreed' To Shut Down USAID"
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
             <h2>Formerly Featured Focus Areas</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Once Promoted Global Health... Until We Got Sick of It</h3>
-                    <p>We invested in global health, claimed to protect Americans at home and abroad, said we were saving lives, tried to strengthen fragile states, and promoted social and economic progress… and then COVID came along, and, well… let's just say, not everything added up.</p>
+                    <h3>Once Promoted Global Health... Until We Got Sick of It 🤧🍿</h3>
+                    <p>We invested in global health, claimed to protect Americans at home and abroad, said we were saving lives, tried to strengthen fragile states, and promoted social and economic progress… but somehow, billions of dollars later, we still had a global pandemic that mysteriously kept needing more funding. Turns out, the only thing healthier was our budget… until someone actually looked at it. 🤔</p>
+                    <p class="card-footnote">Meanwhile, in the background, a cartoon COVID character munches on popcorn, watching the funds roll in like it's the season finale of "Who Wants to Be a Billionaire?"</p>
                 </div>
                 <div class="card">
-                    <h3>Used to Support Global Stability... But Things Got Wobbly</h3>
-                    <p>We used to advance democracy and governance, said it would promote sustainable development and peace around the world… and then reality happened.</p>
+                    <h3>Used to Support Global Stability... But Things Got Wobbly 😎💰</h3>
+                    <p>We used to advance democracy and governance, said it would promote sustainable development and peace around the world… but what we really did was fund a bunch of expensive projects that made consultants rich and left everything else exactly the same. Stability? Only for our bank accounts.</p>
+                    <p class="card-footnote">Somewhere behind the scenes, Big Boss COVID is chilling with sunglasses, a baseball cap, and a fat gold chain, flexing all the taxpayer dollars that somehow didn't make it to the people who needed them most. 💸</p>
                 </div>
                 <div class="card">
-                    <h3>Provided Humanitarian Assistance... And Then Ran Out of Budget</h3>
-                    <p>USAIDed claimed to provide timely and effective humanitarian response, brought disaster relief, and delivered lifesaving assistance amidst complex crises… and then COVID happened, and let's just say, not all 'assistance' was what it seemed.</p>
+                    <h3>Provided Humanitarian Assistance... And Then Ran Out of Budget 😭💸</h3>
+                    <p>USAIDed claimed to provide timely and effective humanitarian response, brought disaster relief, and delivered lifesaving assistance amidst complex crises… but somehow, every crisis kept getting worse, and our budget mysteriously disappeared into administrative costs. Turns out, humanitarian aid is really good at helping bureaucrats upgrade their office furniture.</p>
+                    <p class="card-footnote">Meanwhile, in the background, a crying COVID character watches the last of the aid money vanish, wondering where it all went. Spoiler alert: it wasn't to the people who actually needed it. 😭</p>
                 </div>
             </div>
         </div>
@@ -576,7 +744,8 @@
             <div class="grid">
                 <div class="card">
                     <h3>Funding Essentials</h3>
-                    <p>Trying to figure out which funding approach used to be best for your organization? Don't worry, we were too! Explore the mysteries of USAIDed's funding terminology and discover opportunities—assuming the COVID boss in the background hasn't already decided for you.</p>
+                    <p>Trying to figure out which funding approach used to be best for your organization? Don't worry, we were too! But thanks to USAIDed, the only thing more mysterious than their funding process is their sudden website outage.</p>
+                    <p class="card-footnote">Explore the shadowy labyrinth of USAIDed's funding terminology, where grants are handed out based on a top-secret algorithm known only to the "COVID boss in the background." Will your project get millions in aid, or will it mysteriously vanish into a bioweapons lab nobody admits exists? The thrill of uncertainty is part of the experience!</p>
                 </div>
             </div>
         </section>
@@ -632,6 +801,7 @@
         <div class="consent-content">
             <div class="consent-text">
                 <p>We use cookies and similar technologies to help personalize content, tailor and measure ads, and provide a better experience. By clicking "Accept All" you agree to all cookies. Alternatively, you can "Customize" your choices or accept only necessary cookies.</p>
+                <p class="consent-disclaimer">This website (USAIDed) is a parody and satirical project. It is not affiliated with, endorsed by, or associated with USAID, the U.S. government, or any official entity. The content is for entertainment purposes only.</p>
             </div>
             <div class="consent-buttons">
                 <button class="consent-button accept-all" onclick="acceptAllConsent()">Accept All</button>
@@ -640,6 +810,19 @@
             </div>
         </div>
     </div>
+
+    <!-- Add full disclaimer section at bottom -->
+    <section class="full-disclaimer">
+        <div class="container">
+            <h2>Disclaimer: This is a Satirical and Parody Website</h2>
+            <div class="disclaimer-content">
+                <p>This website (USAIDed) is a parody and satirical project. It is not affiliated with, endorsed by, or associated with USAID, the U.S. government, or any official entity. The content on this site is for entertainment and comedic purposes only and should not be taken as factual or representative of real-world events, policies, or statements.</p>
+                <p>All references to real people, organizations, or events are used in a humorous, exaggerated, or fictional manner. Any resemblance to actual events or persons, living or dead, is purely coincidental and intended as satire.</p>
+                <p>This site does not offer financial, legal, or governmental services. Any claims, representations, or implications made here are strictly part of the satirical nature of this content.</p>
+                <p>By using this site, you acknowledge that this is a work of satire and that no real governmental agency, individual, or policy is being impersonated or misrepresented with intent to deceive.</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Add consent handling script -->
     <script>
@@ -684,6 +867,30 @@
             // You can implement a more detailed consent management interface here
             alert("Customize consent options coming soon!");
         }
+    </script>
+
+    <!-- Add floating disclaimer button -->
+    <div class="floating-disclaimer">
+        <button onclick="toggleDisclaimer()" class="disclaimer-toggle">⚠️ PARODY SITE</button>
+    </div>
+
+    <div class="crypto-warning">
+        <p><strong>CRYPTOCURRENCY RISK WARNING:</strong> This is a meme coin project. Cryptocurrencies are highly volatile and risky investments. Never invest more than you can afford to lose.</p>
+    </div>
+
+    <script>
+        function toggleDisclaimer() {
+            document.querySelector('.full-disclaimer').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Show disclaimer every 60 seconds
+        setInterval(() => {
+            const disclaimer = document.createElement('div');
+            disclaimer.className = 'floating-reminder';
+            disclaimer.innerHTML = '⚠️ Remember: This is a parody site!';
+            document.body.appendChild(disclaimer);
+            setTimeout(() => disclaimer.remove(), 3000);
+        }, 60000);
     </script>
 </body>
 </html> 
